@@ -1,0 +1,12 @@
+[submodule "client"]
+	path = client
+	url = https://github.com/ecfortes/client.git
+[submodule "server"]
+	path = server
+	url = https://github.com/ecfortes/server.git
+[submodule "docker compose"]
+	path = docker compose
+	url = https://github.com/ecfortes/dersa---docker-compose.git
+[submodule "node-red"]
+	path = node-red
+	url = https://github.com/ecfortes/dersa_node-red.git
