@@ -27,6 +27,12 @@
   - `SQL_SLOW_MS`: ms mínimos para logar.
   - `SQL_PARAMS`: loga parâmetros JSON.
 
+Arquivos de configuração:
+- `.env.development` (padrão para `npm run dev`, inclui conexão local Docker).
+- `.env.production` (template carregado quando `NODE_ENV=production` via `npm start`).
+- `.env` pode ser usado para variáveis comuns às duas execuções.
+- Em cenários sem domínio (uso via IP fixo), preencha `PGHOST`, `CLIENT_ORIGIN` e demais URLs com o endereço IP e porta correspondentes.
+
 ## Logging SQL
 - `db.js` usa `cli-highlight` + `picocolors`.
 - Header indica duração (`colorMs`), verbo (`verbColor`) e erros.

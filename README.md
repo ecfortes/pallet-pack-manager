@@ -42,7 +42,7 @@ Porta 35432, usuario `zegla`, senha `zg1982`, banco `zegla`.
 ### Backend
 ```bash
 cd server
-cp .env.example .env   # ajuste se necessario
+# Ajuste server/.env.development se precisar alterar host/porta locais
 npm install
 npx sequelize-cli db:migrate
 npm run dev            # http://localhost:4000
@@ -67,6 +67,12 @@ npm run dev            # http://localhost:5173
 - `PORT` porta HTTP da API.
 - `CLIENT_ORIGIN` lista separada por virgula de origens liberadas.
 - `SQL_LOG`, `SQL_SLOW_MS`, `SQL_PARAMS` controlam logging SQL colorido.
+
+### Perfis de Ambiente
+- `server/.env.development` para desenvolvimento local (carregado por `npm run dev`).
+- `server/.env.production` como template para producao (carregado por `npm start`).
+- `client/.env.development` e `client/.env.production` controlam `VITE_API_BASE`.
+- Em redes sem dominio (gabinete local), informe os IPs fixos nas variaveis `CLIENT_ORIGIN` e `VITE_API_BASE` (ex.: `http://192.168.1.50:5173` para dev e `http://192.168.1.50:4173` para build).
 
 ## Proximos Passos
 - Consulte `docs/` para guias completos de arquitetura, banco, API e operacao.
